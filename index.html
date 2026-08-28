@@ -281,7 +281,7 @@
         </div>
       </div>
 
-      <div class="timeline-item">
+            <div class="timeline-item">
         <div class="timeline-marker"></div>
         <div class="timeline-content">
           <div class="timeline-header">
@@ -289,14 +289,17 @@
             <span class="timeline-company">Symufolk</span>
             <span class="timeline-date">Aug 2025 – Jan 2026 · Hybrid</span>
           </div>
+          <p class="timeline-note">Worked as a Data Engineer on a marketing analytics ETL project, responsible for extracting digital advertising data through Adverity connectors, validating exported data, and loading it into Snowflake using existing dbt models.</p>
           <ul>
-            <li>Worked on marketing analytics data pipelines using Adverity, dbt, and Snowflake.</li>
-            <li>Supported ingestion and processing of digital advertising and social media advertising data via Adverity connectors.</li>
-            <li>Performed data validation on source CSV exports and executed/monitored dbt transformation models.</li>
-            <li>Loaded, transformed, and maintained advertising data in Snowflake for reporting and analytics.</li>
+            <li>Extracted TikTok Ads and Snapchat Ads data through Adverity connectors, configuring and monitoring scheduled extractions to keep advertising datasets current.</li>
+            <li>Validated CSV exports from Adverity before downstream processing, checking for missing fields, malformed records, and inconsistencies against the source platforms.</li>
+            <li>Executed existing dbt models to transform and load validated advertising data into Snowflake, monitoring model runs for failures or unexpected output.</li>
+            <li>Investigated discrepancies between raw exports and transformed output, tracing issues back to either the Adverity extraction step or the dbt transformation logic.</li>
+            <li>Supported the reliability of the marketing analytics pipeline by confirming that advertising data loaded into Snowflake was complete, accurate, and ready for downstream reporting.</li>
+            <li>Worked within an established ETL framework (Adverity → dbt → Snowflake) rather than building the pipeline from scratch, focusing on extraction accuracy, validation, and reliable execution of the existing transformation layer.</li>
           </ul>
           <div class="tech-tags">
-            <span>Snowflake</span><span>dbt</span><span>Adverity</span><span>SQL</span><span>Marketing Analytics</span>
+            <span>Adverity</span><span>dbt</span><span>Snowflake</span><span>SQL</span><span>TikTok Ads</span><span>Snapchat Ads</span><span>Data Validation</span><span>Marketing Analytics</span>
           </div>
         </div>
       </div>
@@ -309,13 +312,19 @@
             <span class="timeline-company">Cummins Inc.</span>
             <span class="timeline-date">Jan 2025 – Aug 2025 · Remote</span>
           </div>
+          <p class="timeline-note">Led the initial design phase of a Finance Unified Data Model (UDM), creating a system-agnostic Common Fact Table Structure intended to support enterprise-wide financial reporting and analytics independent of any single source system.</p>
           <ul>
-            <li>Designed and contributed to a Finance Unified Data Model (UDM) using system-agnostic common fact table structures.</li>
-            <li>Standardized finance entities, measures, dimensions, and business terminology across financial domains, including Journal Entries, Accounts Receivable, Accounts Payable, General Ledger, Margin, and Cost of Goods Sold.</li>
-            <li>Supported a business-process-driven architecture independent of individual ERP source systems, enabling scalable integration from systems such as SAP and Oracle.</li>
+            <li>Analyzed finance KPI catalogs and business formulas to derive the business entities, measures, dimensions, and transactional attributes required to support enterprise financial reporting.</li>
+            <li>Designed canonical fact models for core financial processes, including Journal Entry, Accounts Receivable (AR), Accounts Payable (AP), General Ledger, Margin, and Cost of Goods Sold (COGS) structures.</li>
+            <li>Performed field identification, normalization, deduplication, and categorization across finance data elements to establish a clean, reusable data foundation for the UDM.</li>
+            <li>Defined business-level fact grains and primary key strategies for each canonical fact model, and standardized business terminology independent of any individual source system's implementation.</li>
+            <li>Collaborated with business, finance, and architecture teams to shape a data model consistent enough to integrate financial data from multiple ERP platforms, including SAP, Oracle-based systems, and other enterprise financial applications.</li>
+            <li>Established system-agnostic naming conventions and canonical business entities to support future harmonization of financial data across regions, business units, and source systems.</li>
+            <li>Conducted gap analysis between KPI-driven business requirements and existing source-system data structures, laying the groundwork for future source-to-target mapping work.</li>
+            <li>Contributed foundational architecture and design decisions that served as the starting point for the broader Finance UDM implementation roadmap.</li>
           </ul>
           <div class="tech-tags">
-            <span>Data Modeling</span><span>Unified Data Models</span><span>Data Warehousing</span><span>Finance Data</span><span>SQL</span>
+            <span>Data Modeling</span><span>Unified Data Model (UDM)</span><span>Finance Data</span><span>Fact & Dimension Modeling</span><span>SAP</span><span>Oracle</span><span>Enterprise Data Architecture</span><span>SQL</span>
           </div>
         </div>
       </div>
@@ -328,13 +337,18 @@
             <span class="timeline-company">BytezGrid</span>
             <span class="timeline-date">Mar 2024 – Jan 2025 · Hybrid</span>
           </div>
+          <p class="timeline-note">Supported an IBM-based enterprise data engineering and reporting environment, with a focus on ETL support, pipeline failure investigation, and data lineage analysis across the full path from source systems to business reporting.</p>
           <ul>
-            <li>Supported IBM DataStage ETL workflows and investigated ETL job failures via log analysis.</li>
-            <li>Performed data lineage analysis and supported report validation using IBM Cognos.</li>
-            <li>Monitored pipeline alerts and contributed to root cause analysis and troubleshooting alongside senior engineers.</li>
+            <li>Supported IBM DataStage ETL jobs that moved data from source systems into the enterprise data warehouse, helping ensure data flowed correctly through each stage of the pipeline.</li>
+            <li>Traced data lineage end-to-end — from source systems, through DataStage ETL transformations, into the data warehouse, and finally into IBM Cognos reports — to identify where missing, incorrect, or mismatched values originated.</li>
+            <li>Investigated ETL job failures by reviewing job logs, identifying the point of failure, and determining whether the issue stemmed from source data, transformation logic, or downstream dependencies.</li>
+            <li>Checked dependent job triggers to confirm that upstream jobs completed successfully before downstream jobs executed, and identified cases where a failed or delayed trigger caused a cascading pipeline issue.</li>
+            <li>Managed report and alert notifications tied to job completion and failure events, ensuring the right stakeholders were informed when a pipeline or report run encountered a problem.</li>
+            <li>Supported report validation in IBM Cognos by comparing report output against source and warehouse data to catch discrepancies before they reached business users.</li>
+            <li>Escalated unresolved or complex issues to senior engineers with supporting context — logs, affected jobs, and lineage findings — to speed up root cause identification and resolution.</li>
           </ul>
           <div class="tech-tags">
-            <span>IBM DataStage</span><span>IBM Cognos</span><span>ETL</span><span>Data Lineage</span><span>Production Support</span>
+            <span>IBM DataStage</span><span>IBM Cognos</span><span>ETL</span><span>Data Lineage</span><span>Data Warehouse Support</span><span>Production Troubleshooting</span><span>Report Validation</span>
           </div>
         </div>
       </div>
@@ -347,19 +361,20 @@
             <span class="timeline-company">CodeGurus</span>
             <span class="timeline-date">Sep 2022 – Mar 2024 · Remote</span>
           </div>
-          <p class="timeline-note">The start of my professional Data Engineering journey.</p>
+          <p class="timeline-note">Designed and built an end-to-end near real-time cryptocurrency data ingestion pipeline using AWS and Snowflake — the start of my professional Data Engineering journey.</p>
           <ul>
-            <li>Designed and implemented a near real-time cryptocurrency data ingestion pipeline, fetching market data from external APIs on a scheduled basis via Python on AWS EC2.</li>
-            <li>Streamed data through AWS Kinesis and Firehose, delivering JSON data into S3 and supporting automated loading into Snowflake via external stages and Snowpipe/COPY INTO.</li>
+            <li>Deployed a Python script on an AWS EC2 instance to continuously fetch cryptocurrency market data from an external API on a defined refresh interval, handling scheduled execution and API response parsing.</li>
+            <li>Streamed the extracted data into Amazon Kinesis Data Firehose, converting records into JSON format as part of the ingestion flow.</li>
+            <li>Configured Firehose to batch and deliver JSON data into an Amazon S3 bucket in small, time-based batches (landing new files approximately every few seconds) to support near real-time downstream availability.</li>
+            <li>Integrated Snowflake with the S3 bucket by configuring an external stage, defining a JSON file format, and setting up a Snowpipe/COPY INTO process to automatically detect and load newly landed files.</li>
+            <li>Owned the ingestion pipeline end-to-end — from API extraction, through AWS streaming and S3 storage, to automated loading into the Snowflake raw schema — establishing the foundation for downstream transformation and warehouse modeling.</li>
+            <li>Monitored the pipeline for ingestion delays, malformed records, and load failures, validating that data landing in the raw layer matched what was being fetched from the source API.</li>
           </ul>
           <div class="tech-tags">
-            <span>Python</span><span>AWS EC2</span><span>Kinesis</span><span>S3</span><span>Snowflake</span><span>Snowpipe</span>
+            <span>Python</span><span>AWS EC2</span><span>Amazon Kinesis Data Firehose</span><span>Amazon S3</span><span>Snowflake External Stage</span><span>Snowpipe / COPY INTO</span><span>JSON</span><span>APIs</span>
           </div>
         </div>
       </div>
-
-    </div>
-  </div>
 </section>
 
 <!-- ================= SELECTED CONTRIBUTIONS ================= -->
