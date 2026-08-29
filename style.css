@@ -479,3 +479,80 @@ img { max-width: 100%; display: block; }
   .section { padding: 60px 0; }
   .lifecycle-diagram { padding: 20px; }
 }
+
+/* ===== Textual Animations ===== */
+
+/* Hero entrance animation */
+.hero-text .eyebrow,
+.hero-text h1,
+.hero-text .hero-sub,
+.hero-text .hero-desc,
+.hero-text .hero-cta,
+.hero-text .hero-links {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroFadeUp 0.7s ease forwards;
+}
+
+.hero-text .eyebrow      { animation-delay: 0.05s; }
+.hero-text h1             { animation-delay: 0.15s; }
+.hero-text .hero-sub      { animation-delay: 0.25s; }
+.hero-text .hero-desc     { animation-delay: 0.35s; }
+.hero-text .hero-cta      { animation-delay: 0.45s; }
+.hero-text .hero-links    { animation-delay: 0.55s; }
+
+.hero-photo-wrap {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: heroPhotoIn 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes heroFadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroPhotoIn {
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Scroll-triggered reveal for section content */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children inside a revealed container */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.in-view > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.in-view > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stagger.in-view > *:nth-child(3) { transition-delay: 0.15s; }
+.reveal-stagger.in-view > *:nth-child(4) { transition-delay: 0.2s; }
+.reveal-stagger.in-view > *:nth-child(5) { transition-delay: 0.25s; }
+.reveal-stagger.in-view > *:nth-child(6) { transition-delay: 0.3s; }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-text *, .hero-photo-wrap, .reveal, .reveal-stagger > * {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
