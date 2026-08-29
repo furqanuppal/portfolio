@@ -72,3 +72,17 @@ function applyProfileConfig() {
 }
 
 applyProfileConfig();
+
+// ===== Scroll-triggered text reveal =====
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+  revealObserver.observe(el);
+});
